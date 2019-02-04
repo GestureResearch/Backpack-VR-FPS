@@ -100,10 +100,10 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.06
+        intensity: 0.1
         threshold: 2
         softKnee: 0.389
-        radius: 1.53
+        radius: 1.65
         antiFlicker: 1
       lensDirt:
         texture: {fileID: 0}
@@ -113,14 +113,14 @@ MonoBehaviour:
     m_Settings:
       tonemapping:
         tonemapper: 2
-        neutralBlackIn: -0.006
-        neutralWhiteIn: 8.37
-        neutralBlackOut: 0.0005
+        neutralBlackIn: -0.009
+        neutralWhiteIn: 8
+        neutralBlackOut: -0.028
         neutralWhiteOut: 4.6
         neutralWhiteLevel: 3.2
         neutralWhiteClip: 9.93
       basic:
-        postExposure: 0
+        postExposure: -0.12
         temperature: -7
         tint: -16
         hueShift: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
           lift: {r: 0.8020493, g: 0.9073839, b: 1, a: 0}
-          gamma: {r: 1, g: 0.86370873, b: 0.9091009, a: -0.078175895}
-          gain: {r: 0.87622094, g: 1, b: 0.8992974, a: 0}
+          gamma: {r: 1, g: 0.86370873, b: 0.9091009, a: 0.03734757}
+          gain: {r: 0.87622094, g: 1, b: 0.8992974, a: -0.31768954}
       curves:
         master:
           curve:

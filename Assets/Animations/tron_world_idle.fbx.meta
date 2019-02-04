@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cddf290931232c149b768ad2bdacc9ae
+guid: c6a8612e05343c34487a84a0983f4c7d
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -144,7 +144,7 @@ ModelImporter:
     3300000: default
     4300000: default
     4300002: TronCharacter
-    7400000: Firing Rifle (1)
+    7400000: mixamo.com
     9500000: //RootNode
     13700000: TronCharacter
   externalObjects: {}
@@ -175,18 +175,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Firing Rifle (1)
+      name: mixamo.com
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 35
+      lastFrame: 231
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -197,14 +197,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.7840376
-        functionName: NewEvent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

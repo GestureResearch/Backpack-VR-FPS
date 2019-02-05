@@ -7,12 +7,10 @@ public class ChangeScene : MonoBehaviour {
 
     public string sceneName;
 
-    public GameObject player;
-
     void OnDestroy()
     {
-        Destroy(player);
-        SceneManager.LoadScene(sceneName);        
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("finish"))
+            Destroy(GameObject.Find("Regular_Character"));
+        SceneManager.LoadScene(sceneName);
     }
-
 }

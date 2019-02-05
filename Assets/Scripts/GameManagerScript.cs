@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public GameObject player;
-    
+    public string sceneName = "finish";
+
     public GameObject[] enemies = new GameObject[2];
 
     // Use this for initialization
@@ -26,10 +26,9 @@ public class GameManagerScript : MonoBehaviour
                 count++;
             }
         }
-        if(count == 2)
+        if(count == enemies.Length)
         {
-            Destroy(player);
-            SceneManager.LoadScene("finish");
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

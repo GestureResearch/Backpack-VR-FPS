@@ -8,15 +8,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: cc
+  m_Script: {fileID: 11500000, guid: 6f3ebb1e18d1844439583ed4d7fd50fc, type: 3}
+  m_Name: CC
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
     m_Settings:
       mode: 0
       depth:
-        scale: 0.238
+        scale: 1
       motionVectors:
         sourceOpacity: 1
         motionImageOpacity: 0
@@ -25,11 +25,11 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       excludeSkybox: 1
   antialiasing:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       method: 0
       fxaaSettings:
@@ -40,7 +40,7 @@ MonoBehaviour:
         stationaryBlending: 0.95
         motionBlending: 0.85
   ambientOcclusion:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       intensity: 1
       radius: 0.3
@@ -54,15 +54,15 @@ MonoBehaviour:
     m_Settings:
       reflection:
         blendType: 0
-        reflectionQuality: 0
-        maxDistance: 86
+        reflectionQuality: 2
+        maxDistance: 100
         iterationCount: 256
         stepSize: 3
-        widthModifier: 0.01
-        reflectionBlur: 1.28
+        widthModifier: 0.5
+        reflectionBlur: 1
         reflectBackfaces: 0
       intensity:
-        reflectionMultiplier: 1.1
+        reflectionMultiplier: 1
         fadeDistance: 100
         fresnelFade: 1
         fresnelFadePower: 1
@@ -100,11 +100,11 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.1
-        threshold: 2
-        softKnee: 0.389
-        radius: 1.65
-        antiFlicker: 1
+        intensity: 8.79
+        threshold: 1.1
+        softKnee: 0.378
+        radius: 6.76
+        antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
         intensity: 3
@@ -112,24 +112,24 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       tonemapping:
-        tonemapper: 2
-        neutralBlackIn: -0.009
-        neutralWhiteIn: 8
-        neutralBlackOut: -0.028
-        neutralWhiteOut: 4.6
-        neutralWhiteLevel: 3.2
-        neutralWhiteClip: 9.93
+        tonemapper: 1
+        neutralBlackIn: 0.02
+        neutralWhiteIn: 10
+        neutralBlackOut: 0
+        neutralWhiteOut: 10
+        neutralWhiteLevel: 5.3
+        neutralWhiteClip: 10
       basic:
-        postExposure: -0.12
-        temperature: -7
-        tint: -16
+        postExposure: 0
+        temperature: -13.4
+        tint: 12.5
         hueShift: 0
-        saturation: 1
-        contrast: 1
+        saturation: 1.179
+        contrast: 0.542
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
-        blue: {x: 0, y: 0, z: 1}
+        blue: {x: 0, y: 0, z: 1.02}
         currentEditingChannel: 2
       colorWheels:
         mode: 0
@@ -138,9 +138,9 @@ MonoBehaviour:
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 0.8020493, g: 0.9073839, b: 1, a: 0}
-          gamma: {r: 1, g: 0.86370873, b: 0.9091009, a: 0.03734757}
-          gain: {r: 0.87622094, g: 1, b: 0.8992974, a: -0.31768954}
+          lift: {r: 1, g: 1, b: 1, a: 0}
+          gamma: {r: 1, g: 1, b: 1, a: 0}
+          gain: {r: 1, g: 1, b: 1, a: 0}
       curves:
         master:
           curve:
@@ -276,9 +276,9 @@ MonoBehaviour:
         e_CurveG: 0
         e_CurveB: 0
   userLut:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
-      lut: {fileID: 2800000, guid: e9949bb87050459498a0cb83e1b83377, type: 3}
+      lut: {fileID: 0}
       contribution: 1
   chromaticAberration:
     m_Enabled: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       colored: 1
-      intensity: 0
+      intensity: 0.5
       size: 1
       luminanceContribution: 0.8
   vignette:

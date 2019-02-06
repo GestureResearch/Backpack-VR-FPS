@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField]
     float damage = 1.0f;
+    [SerializeField]
+    float speed = 1.0f;
 
     Animator anim;
     LineRenderer lineRenderer;
@@ -35,6 +37,8 @@ public class EnemyController : MonoBehaviour
             startFire = true;
             lineRenderer.enabled = true;
             target = other.gameObject;
+            anim.SetBool("isFiring", true);
+            anim.SetBool("isIdle", false);
         }
     }
 
@@ -45,6 +49,8 @@ public class EnemyController : MonoBehaviour
             startFire = false;
             lineRenderer.enabled = false;
             target = null;
+            anim.SetBool("isFiring", false);
+            anim.SetBool("isIdle", true);
         }
     }
 
@@ -54,6 +60,10 @@ public class EnemyController : MonoBehaviour
         {
             Fire(target.transform);
         }
+        else
+        {
+            StopMoving();
+        }
     }
 
     void Fire(Transform target)
@@ -61,6 +71,18 @@ public class EnemyController : MonoBehaviour
         lineRenderer.SetPosition(0, shootOrigin.transform.position);
         lineRenderer.SetPosition(1, target.GetChild(0).GetChild(0).GetChild(0).GetChild(0).position);
         ReduceHealth(target.gameObject);
+        StartMoving(target);
+    }
+
+    void StartMoving(Transform targetTransform)
+    {
+        transform.LookAt(targetTransform);
+        this.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * speed, ForceMode.Force);
+    }
+
+    void StopMoving()
+    {
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     void ReduceHealth(GameObject player)

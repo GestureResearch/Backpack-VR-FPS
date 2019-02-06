@@ -7,83 +7,72 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float lookRadius = 10f;      // Detection range for player
+    [SerializeField]
+    GameObject shootOrigin;
 
-    public float attackRadius = 3f;      // Detection range for player
+    [SerializeField]
+    float damage = 1.0f;
 
-    Transform target;   // Reference to the player
-    NavMeshAgent agent; // Reference to the NavMeshAgent
     Animator anim;
+    LineRenderer lineRenderer;
+
+    private bool startFire;
+
+    private GameObject target;
 
     // Use this for initialization
     void Start()
     {
-        target = GameObject.Find("Regular_Character").transform;
-        agent = GetComponent<NavMeshAgent>();
         anim = this.GetComponent<Animator>();
+        lineRenderer = shootOrigin.GetComponent<LineRenderer>();
+        lineRenderer.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Distance to the target
-        float distance = Vector3.Distance(target.position, transform.position);
-
-        // If inside the lookRadius
-        if (distance <= lookRadius)
+    private void OnTriggerStay(Collider other)
+    {        
+        if(other.name == "Regular_Character")
         {
-            if (PresentinLineofSight())
-            {
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isWalking", true);
-                agent.SetDestination(target.position);
-                if (distance <= attackRadius)
-                {
-                    anim.SetBool("isFiring", true);
-                    //attack
-                }
-                else
-                {
-                    //stop attacking
-                }
-            }
-            else
-            {
-                FaceTarget();
-                anim.SetBool("isWalking", false);
-                anim.SetBool("isFiring", false);
-                anim.SetBool("isIdle", true);
-                // stop attacking
-            }
+            startFire = true;
+            lineRenderer.enabled = true;
+            target = other.gameObject;
         }
     }
 
-    bool PresentinLineofSight()
+    private void OnTriggerExit(Collider other)
     {
-        RaycastHit hit;
-        Vector3 rayDirection = target.position - transform.position;
-        if (Physics.Raycast(transform.position, rayDirection, out hit))
+        if (other.name == "Regular_Character")
         {
-            if (hit.transform == target)
-            {
-                return true;
-            }
+            startFire = false;
+            lineRenderer.enabled = false;
+            target = null;
         }
-        return false;
+    }
+
+    private void Update()
+    {
+        if(startFire)
+        {
+            Fire(target.transform);
+        }
+    }
+
+    void Fire(Transform target)
+    {
+        lineRenderer.SetPosition(0, shootOrigin.transform.position);
+        lineRenderer.SetPosition(1, target.GetChild(0).GetChild(0).GetChild(0).GetChild(0).position);
+        ReduceHealth(target.gameObject);
+    }
+
+    void ReduceHealth(GameObject player)
+    {
+        player.GetComponent<Health>().currentHealth -= damage;
     }
 
     // Rotate to face the target
-    void FaceTarget()
+    void FaceTarget(Transform target)
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
-    }
-
-    // Show the lookRadius in editor
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }

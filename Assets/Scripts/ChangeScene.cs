@@ -9,8 +9,8 @@ public class ChangeScene : MonoBehaviour {
 
     void OnDestroy()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("finish"))
-            Destroy(GameObject.Find("Regular_Character"));
-        SceneManager.LoadScene(sceneName);
+        GameObject player = GameObject.Find("Regular_Character");
+        player.GetComponent<Health>().currentHealth = player.GetComponent<Health>().startingHealth;
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }

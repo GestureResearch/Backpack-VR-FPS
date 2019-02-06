@@ -230,7 +230,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4094542688849484}
-  - component: {fileID: 114460188804269304}
   m_Layer: 30
   m_Name: Pivot
   m_TagString: Untagged
@@ -317,7 +316,6 @@ GameObject:
   - component: {fileID: 4632032605510418}
   - component: {fileID: 33970614025871950}
   - component: {fileID: 136465019681995082}
-  - component: {fileID: 23394426339984930}
   - component: {fileID: 54822470800389274}
   - component: {fileID: 114420888199402576}
   - component: {fileID: 114209389342374582}
@@ -441,7 +439,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630300041803612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4074549203214074}
@@ -523,7 +521,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1989653523451594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 1.98, z: -0.2}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 4631610315832126}
@@ -631,40 +629,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!23 &23394426339984930
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1989653523451594}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23647363910714820
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -867,7 +831,7 @@ MonoBehaviour:
   AlwaysUseAlternateRightModel: 1
   AlternateLeftController: {fileID: 1097318689274706, guid: 869d340c69dbcef459070c1a159d38ac,
     type: 2}
-  AlternateRightController: {fileID: 1400363397943626, guid: 4557b3305d9d25340960d95c6dabd888,
+  AlternateRightController: {fileID: 1745944491107164, guid: 4557b3305d9d25340960d95c6dabd888,
     type: 2}
   TouchpadTouchedOverride: {fileID: 0}
   GLTFMaterial: {fileID: 2100000, guid: 2ac78523d661e954c83d799f582b22e8, type: 2}
@@ -1008,23 +972,6 @@ MonoBehaviour:
   Axis0Destination: 0
   Axis1Destination: 4
   Axis2Destination: 6
---- !u!114 &114460188804269304
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734412888969100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35eabefe289ebe2438ebb210be700389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationRange: {x: 170, y: 0}
-  rotationSpeed: 5
-  dampingTime: 0.1
-  autoZeroVerticalOnMobile: 1
-  autoZeroHorizontalOnMobile: 0
-  relative: 1
 --- !u!114 &114566419250354352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1051,6 +998,7 @@ MonoBehaviour:
   canDie: 0
   startingHealth: 300
   maxHealth: 100
+  currentHealth: 0
   replaceWhenDead: 0
   deadReplacement: {fileID: 0}
   makeExplosion: 0

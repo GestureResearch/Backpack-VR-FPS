@@ -169,48 +169,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 447992, guid: 898ffe616dfa2f34cba7989d87a7edf5, type: 2}
   m_PrefabInternal: {fileID: 173417124}
---- !u!1001 &250163647
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4632032605510418, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632032605510418, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632032605510418, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632032605510418, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632032605510418, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632032605510418, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632032605510418, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632032605510418, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 24ca80cb6f67ed74dbb6db952e71b1b0, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &272021045
 Prefab:
   m_ObjectHideFlags: 0
@@ -352,7 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: main
-  player: {fileID: 0}
 --- !u!222 &712000305
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -374,6 +331,7 @@ MonoBehaviour:
   canDie: 1
   startingHealth: 50
   maxHealth: 50
+  currentHealth: 0
   replaceWhenDead: 1
   deadReplacement: {fileID: 100054, guid: 789477d8ec001a946b6baa55bd4a4f20, type: 2}
   makeExplosion: 1
@@ -728,7 +686,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: main
-  player: {fileID: 0}
 --- !u!1001 &1424430709
 Prefab:
   m_ObjectHideFlags: 0
@@ -934,8 +891,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24786629, y: 0.038813803, z: 0.24786629}
-  m_Center: {x: -0.000000008979412, y: 0.019406902, z: 0.0074746474}
+  m_Size: {x: 0.24786629, y: 0.02141576, z: 0.24786629}
+  m_Center: {x: -0.000000008979412, y: 0.01070788, z: 0.0074746474}
 --- !u!1001 &1870866383
 Prefab:
   m_ObjectHideFlags: 0
